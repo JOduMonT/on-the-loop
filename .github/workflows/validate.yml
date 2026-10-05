@@ -1,0 +1,66 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install skills-ref (pinned commit of agentskills/agentskills)
+        run: pip install "git+https://github.com/agentskills/agentskills.git@69ef37e9424c0a7ea9dd2293b559e43ec8176379#subdirectory=skills-ref"
+
+      - name: Skill passes the Agent Skills validator
+        run: skills-ref validate skills/charter
+
+      - name: No symlinks (they break on Windows checkouts)
+        run: |
+          if git ls-files -s | awk '$1=="120000"' | grep -q .; then
+            echo "Symlinks found:"; git ls-files -s | awk '$1=="120000" {print $4}'; exit 1
+          fi
+
+      - name: No CRLF in the skill (hash pins must stay stable)
+        run: |
+          if grep -rIl $'\r' skills evals AGENTS.md README.md; then
+            echo "CRLF line endings found in the files above"; exit 1
+          fi
+
+      - name: SKILL.md stays under 500 lines
+        run: |
+          n=$(wc -l < skills/charter/SKILL.md)
+          echo "SKILL.md: $n lines"
+          [ "$n" -lt 500 ]
+
+      - name: Evaluation queries are well-formed (20 total, 10 positive, 12 train)
+        run: |
+          python3 - <<'PY'
+          import json
+          d = json.load(open("evals/trigger-queries.json"))
+          assert len(d) == 20, len(d)
+          assert sum(x["should_trigger"] for x in d) == 10
+          assert sum(x["set"] == "train" for x in d) == 12
+          print("evals OK")
+          PY
+
+      - name: No traces of private projects (optional)
+        env:
+          DENYLIST: ${{ vars.DENYLIST }}
+        run: |
+          if [ -z "$DENYLIST" ]; then
+            echo "DENYLIST repository variable not set; skipping."; exit 0
+          fi
+          if git grep -nIiE "$DENYLIST" -- . ':!.github'; then
+            echo "Forbidden terms found (see above)"; exit 1
+          fi

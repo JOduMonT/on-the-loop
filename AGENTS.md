@@ -18,3 +18,4 @@ Single instruction file for every tool. Full charter: [skills/charter/references
 - Publishing, releases and going public need the owner's explicit go.
 - **Invariants** (enforce on every change): the skill stays self-contained and provider-agnostic; nothing specific to a field, person, brand, vendor or country; no symlinks (Windows must work); `SKILL.md` under 500 lines; run `skills-ref validate skills/charter` before every PR; MIT licence.
 - One session per repo at a time: check open PRs before changing anything.
+- CI (`.github/workflows/validate.yml`) enforces: validator, no symlinks, no CRLF, `SKILL.md` size, well-formed evals, and (if the `DENYLIST` repository variable is set) no traces of private projects. Keep the denylist in that variable, never in the repo.
