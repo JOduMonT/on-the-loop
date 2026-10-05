@@ -35,10 +35,10 @@ Each option: what it adds, effort, MoSCoW score (your estimate, say so), risk. T
 
 ## 4. Plan, then apply
 Write the plan first (files to create, files to merge, lines to add) and get approval. Then:
-- **New repo:** `AGENTS.md` = `assets/operating-core.md` + the owner's domain rules; tool-specific file = one line importing `AGENTS.md` (optional); `references/charter.md` copied to the repo's wiki folder; `raw/`, `wiki/index.md`, `wiki/log.md` in OKF format.
-- **Existing repo:** merge, never overwrite. Add only what is missing, keep existing rules, list conflicts for the owner to decide.
+- **New repo:** `AGENTS.md` = `assets/operating-core.md` (verbatim) + the owner's domain rules, with a link to this skill's installed `references/charter.md` (link it, never copy it: one copy, no drift); tool-specific file = one line importing `AGENTS.md` (optional); `.gitattributes` with `* text=auto eol=lf`; `raw/`, `wiki/index.md`, `wiki/log.md` in OKF format.
+- **Existing repo:** merge, never overwrite. Add only what is missing (same pieces as above), keep existing rules, list conflicts for the owner to decide.
 - **Init (one time, idempotent):** follow "Prerequisites" and "Init" in `references/charter.md`. Verify each sha256 before reading; on mismatch stop and ask.
-- **Validate:** every wiki page has a non-empty `type`; `index.md` has only `okf_version` in frontmatter; `log.md` is date-grouped newest first; `AGENTS.md` contains the Operating core. Fix and re-check until all pass.
+- **Validate:** every wiki page has a non-empty `type`; `index.md` has only `okf_version` in frontmatter; `log.md` is date-grouped newest first; `AGENTS.md` contains the Operating core and its link to the charter resolves. Fix and re-check until all pass.
 
 ## 5. Re-setup mode
 Run when the owner asks, or when the agent *suggests* it after the **drift check** in `references/charter.md` (two or more signals, or a "no" to the pulse question). Show the signals found, repeat the questions with current answers as defaults, propose adjustments with scores, owner picks, apply, log. The agent never changes the charter or the Operating core on its own.
