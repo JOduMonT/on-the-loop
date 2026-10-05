@@ -25,7 +25,7 @@ Look at: `AGENTS.md` and any tool-specific file (`CLAUDE.md` etc.), `README`, wi
 
 ## 2. Ask one round of questions (all at once, short)
 1. What is this repo for, and who works in it (you alone, a team, clients)? What is its **Purpose** in one sentence (a direction to steer toward, not a deliverable), or "not yet"? Either is fine. What is the highest SMART goal you have today (project, cycle, epic, sprint or story)? If there is no Purpose yet, the agent may help you find one later; you approve it.
-2. How do you prioritise today, and how do you decide when in doubt?
+2. How do you prioritise today, how do you decide when in doubt, and how much time can you give this per week?
 3. How proactive should the agent be (wait / suggest / act within limits / act and report)? Default: Level 5 on the loop, i.e. act within limits, report, stop at one-way doors. Which other AI agents work here, what may each touch, and how much autonomy do they start with? (These answers fill the charter's delegation table.)
 4. Which preferences exist that should be captured, and at which level?
 5. Which libraries of methods do you already use? Ours are the defaults. You are invited to browse **Model Thinkers** (modelthinkers.com), **Atlassian Team Playbook plays** and **Confluence templates** and pick different ones; the setup records your choice.
