@@ -12,6 +12,19 @@ The human sets the limits; the agent acts inside them, reports, and stops at one
 
 It builds on two public references, fetched once and pinned by hash: the [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) pattern and the [Open Knowledge Format](https://github.com/GoogleCloudPlatform/open-knowledge-format) (v0.2).
 
+## Where it fits
+Common ways to think about the layers of an agent system, and what this charter covers (it is about governance, not about building the machinery):
+
+| Layer | Covered here? |
+|---|---|
+| Prompt: role, constraints, definition of done, output shape | Yes. The Operating core states them once, permanently, in `AGENTS.md`. |
+| Context: what the model sees, in what order | Partly. Always-on core, on-demand skill, index first. No overflow rules. |
+| Harness: tools, permissions, retries, traces | No. That belongs to your agent tool; the charter stays provider-agnostic. |
+| Loop: run, check, correct, repeat | Yes, at human pace. Plan, implement, validate; retrospective; drift check; a maximum number of attempts per delegation. |
+| Graph: who runs in parallel, who waits, where the human sits | Lightly. Roles (scout, builder, reviewer), the human on the loop, one-way doors. |
+
+What the charter adds on top: scored decisions (MoSCoW, Pareto), a settings cascade so preferences persist, earned autonomy, and a re-setup process.
+
 ## How it loads
 - **Permanent:** the setup writes a short *Operating core* into your repo's `AGENTS.md`, which agents read every session. The behaviour never depends on the skill being triggered.
 - **On demand:** the `charter` skill runs the interactive setup and re-setup: it evaluates the repo, asks one round of questions, proposes 2–3 scored setups, and applies the one you pick.

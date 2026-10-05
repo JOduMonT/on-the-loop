@@ -5,7 +5,7 @@ license: MIT
 compatibility: Needs git. Network (curl) only for the one-time init of pinned references.
 metadata:
   author: jodumont
-  version: "1.0"
+  version: "1.1"
 ---
 
 # Charter setup (interactive)
