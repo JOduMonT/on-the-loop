@@ -4,7 +4,7 @@ type: decision
 description: Self-contained, domain-free charter for any new repository — three pillars (scored decisions, Level 5 chief of staff, settings cascade), posture, mental models, reference libraries.
 tags: [decision, process, principles, charter]
 status: accepted
-version: "1.1"
+version: "1.2"
 updated: 2026-10-05
 ---
 # Charter
@@ -31,6 +31,17 @@ Most specific level wins. A project renames the middle levels to its own vocabul
 | **Release** | A frozen instance; the resolved settings are copied in so later changes never rewrite it |
 
 Rules: resolve, then freeze · an override records who and why in one line · unclear level → propose one and ask · if it isn't written in the repo, a new session won't know it.
+
+## Purpose, goals and steering
+The charter makes the human and the agent one steering system. Steering needs a target, so scores need a reference.
+- **Purpose** is a direction, one sentence, like a compass heading. It is never "achieved", it changes rarely, and it is recorded in the repo's `AGENTS.md`. If none is recorded, the agent asks for it before scoring anything important.
+- **Goal** is a waypoint toward the Purpose: **SMART** (specific, measurable, achievable, relevant, time-bound). Its Definition of Done is the Pareto 20 %. Every MoSCoW score answers: how much does this contribute to the current goal?
+- **Clean goal test:** it is SMART, it serves the Purpose, and no hidden competing goal sits behind it. A goal that fails is a "dirty goal": fix it before spending effort on it.
+- **Three ways to lose the way** (the owner's framing), each with a guard:
+  - *Obsessing over form:* for any structure, format or rule, ask which goal it serves; if none, drop it (the Lean rule).
+  - *Creating interference:* one source of truth for every rule, one session per repo at a time, parallel work only on disjoint files.
+  - *Doubt or internal conflict:* when two rules or goals conflict, apply the precedence order, then the doubt rule; one goal at a time (the bottleneck first).
+- **Test for "flows effortlessly":** the owner's corrections of the same kind, per iteration, trend toward zero.
 
 ## How it loads (permanent vs on demand)
 - **Permanent:** the pillars and the doubt rule live in `AGENTS.md` under "Operating core", loaded every session. This is what makes the agent Level 5; it must never depend on a skill being triggered.
@@ -61,6 +72,7 @@ Setup tailors this table to the repo: which other agents exist, what they may to
 2. Days since the last log entry versus the working rhythm.
 3. Orphans: pages missing from the index, index entries with no file.
 4. Delegations or proposals with no follow-up entry.
+5. No recorded Purpose, or a current goal that fails the clean-goal test.
 Plus a pulse question to the owner ("is this still the right fit?"), because the log only holds what was written down. Two or more signals, or a "no", → the agent *suggests* re-running the setup in re-setup mode; the owner decides.
 
 ## Prerequisites (fetched once at init, pinned)

@@ -25,6 +25,26 @@ Common ways to think about the layers of an agent system, and what this charter 
 
 What the charter adds on top: scored decisions (MoSCoW, Pareto), a settings cascade so preferences persist, earned autonomy, and a re-setup process.
 
+## Why it is shaped this way
+The shape follows cybernetics, the study of steering by feedback. Stafford Beer's Viable System Model says a system that keeps itself going needs five functions. Mapped onto the charter:
+
+| Function | In the charter |
+|---|---|
+| S1 Operations: the work itself | Delegates doing the work (scouts, builders) |
+| S2 Coordination: stop units interfering | One source of truth, one session per repo, parallel only on disjoint files, the precedence order |
+| S3 Control: resources and priorities | MoSCoW, the Definition of Done, attempts, the reviewer |
+| S4 Intelligence: scan the outside, adapt | Scouting, the drift check, re-setup |
+| S5 Policy: identity and purpose | The recorded Purpose and the owner's one-way doors |
+
+Why it helps beyond a nice analogy:
+- **It predicted the gaps we hit.** The charter had S1, S3 and S4 early and lacked S5, so scores had no target: that is the Purpose section. It lacked S2 until two sessions produced competing PRs. When a function is missing, the model says what fails: no S5, incoherence; no S2, interference; no S4, unnoticed drift; no S3, everything urgent. This was spotted after the fact, so treat it as a fit, not a proof. If failures stop being explained by it, drop it.
+- **Recursion.** Every viable system contains viable systems. A delegation brief is a small S5 for the delegate: its purpose (goal), limits and definition of done.
+- **Requisite variety** (Ashby): a regulator needs at least as much variety as the disturbances it must absorb. This justifies options and roles, and the lean rule limits it: enough variety, not maximal.
+- **The good regulator theorem** (Conant and Ashby): a good regulator must be a model of what it regulates. That is why preferences, decisions and state are written into the repo: a session that cannot see the model cannot steer.
+- **Pain signals go straight up.** Beer's model has an emergency channel from operations to the top. Here, one-way doors stop work and go directly to the owner.
+
+How you would test it: the owner's corrections of the same kind per iteration should trend toward zero.
+
 ## How it loads
 - **Permanent:** the setup writes a short *Operating core* into your repo's `AGENTS.md`, which agents read every session. The behaviour never depends on the skill being triggered.
 - **On demand:** the `charter` skill runs the interactive setup and re-setup: it evaluates the repo, asks one round of questions, proposes 2–3 scored setups, and applies the one you pick.
