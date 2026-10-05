@@ -10,8 +10,11 @@ Single instruction file for every tool. Full charter: [skills/charter/references
 5. **Lean.** Drop anything that adds complexity without a concrete, tangible benefit. Iterate Plan → Implement → Validate.
 
 ## Domain rules (this repo)
+- **This repo ships a skill; it is not a wiki.** No `wiki/`, `raw/`, `index.md` or `log.md` here (those belong in the repos that adopt the charter). Decisions and delegations are recorded in PR descriptions; standing preferences in this file.
 - This repo **is** the charter skill: `skills/charter/` is the one source copy. Do not duplicate it (no copies, no symlinks); other repos install a real copy.
 - Edit `references/charter.md`, `assets/operating-core.md` and `SKILL.md` together so they never disagree; bump `version` in both `SKILL.md` and the charter on a behavioural change.
 - Changes to the charter or Operating core are one-way doors: propose with a score, owner decides.
 - Skill description changes must be re-checked against `evals/trigger-queries.json`.
 - Publishing, releases and going public need the owner's explicit go.
+- **Invariants** (enforce on every change): the skill stays self-contained and provider-agnostic; nothing specific to a field, person, brand, vendor or country; no symlinks (Windows must work); `SKILL.md` under 500 lines; run `skills-ref validate skills/charter` before every PR; MIT licence.
+- One session per repo at a time: check open PRs before changing anything.
