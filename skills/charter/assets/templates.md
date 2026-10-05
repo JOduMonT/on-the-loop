@@ -12,6 +12,7 @@
 - **Limits** (tools, repos, data it may touch):
 - **Definition of Done:**
 - **Expected value** (MoSCoW, % estimate):
+- **Attempts** (maximum tries, then stop and report):
 - **Reviewer:**
 
 ## Log entries (OKF `log.md`: date headings newest first, entries added at the top of the date)
