@@ -1,0 +1,22 @@
+[
+  {"set": "train", "should_trigger": true,  "query": "apply the charter to this repo"},
+  {"set": "train", "should_trigger": true,  "query": "I'm starting a new repo for my consulting notes, set it up so you work the way we do in my other project"},
+  {"set": "train", "should_trigger": true,  "query": "you keep forgetting what I told you I prefer, can we fix how you record my preferences?"},
+  {"set": "train", "should_trigger": true,  "query": "lets review how you and I work together, it doesn't feel right anymore"},
+  {"set": "train", "should_trigger": true,  "query": "our log.md hasn't been touched in weeks and half the decisions have no score. what should we do?"},
+  {"set": "train", "should_trigger": true,  "query": "can you be more proactive? I want you to decide small things yourself and only ask me on big ones"},
+  {"set": "validation", "should_trigger": true,  "query": "adopt the on-the-loop setup in ~/code/client-x, it already has an AGENTS.md so don't wipe it"},
+  {"set": "validation", "should_trigger": true,  "query": "how do I get a sub-agent to do research for us without it running wild?"},
+  {"set": "validation", "should_trigger": true,  "query": "set up MoSCoW scoring and a definition of done for how we prioritise in this project"},
+  {"set": "validation", "should_trigger": true,  "query": "new project kickoff: same working rules as usual please"},
+  {"set": "train", "should_trigger": false, "query": "write a project charter document for the stakeholders of our website redesign"},
+  {"set": "train", "should_trigger": false, "query": "draft a team charter for my five-person design team, roles and meeting cadence"},
+  {"set": "train", "should_trigger": false, "query": "add a CONTRIBUTING.md explaining how to open pull requests"},
+  {"set": "train", "should_trigger": false, "query": "set up GitHub Actions CI to run the tests on every push"},
+  {"set": "train", "should_trigger": false, "query": "prioritise these 12 feature requests for me using MoSCoW"},
+  {"set": "train", "should_trigger": false, "query": "summarise yesterday's entries in wiki/log.md"},
+  {"set": "validation", "should_trigger": false, "query": "create an AGENTS.md with the build and test commands for this Node project"},
+  {"set": "validation", "should_trigger": false, "query": "what does the human-in-the-loop pattern mean in machine learning?"},
+  {"set": "validation", "should_trigger": false, "query": "make a new skill that converts my markdown notes to PDF"},
+  {"set": "validation", "should_trigger": false, "query": "write our company's code of conduct"}
+]
