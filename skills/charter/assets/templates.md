@@ -7,6 +7,14 @@
 | Standard (usual recommendation) | + settings cascade, decision records, pinned references and init, drift check | ~1 h | | More files to maintain |
 | Full | + iteration plans and retrospectives, page templates, optional provider adapters | ~half a day | | Easy to over-build; apply "lean" |
 
+## Install record in `AGENTS.md` (makes remove exact; see `references/setup.md`)
+```
+<!-- charter:begin v1.3 | created: <paths of files the setup created> -->
+(Operating core, verbatim from assets/operating-core.md)
+Full text: [charter](<path>/references/charter.md).
+<!-- charter:end -->
+```
+
 ## Reply shape (time is the constraint)
 - **Now:** the one thing only the human can do, and why it unlocks the rest.
 - **Next:** one line.

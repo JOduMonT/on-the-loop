@@ -43,6 +43,26 @@ jobs:
           echo "SKILL.md: $n lines"
           [ "$n" -lt 500 ]
 
+      - name: Charter stays at or under 120 lines
+        run: |
+          n=$(wc -l < skills/charter/references/charter.md)
+          echo "charter.md: $n lines"
+          [ "$n" -le 120 ]
+
+      - name: Operating core is identical in AGENTS.md and README
+        run: |
+          python3 - <<'PY'
+          import re
+          asset = open("skills/charter/assets/operating-core.md").read().strip()
+          agents = open("AGENTS.md").read()
+          m = re.search(r"## Operating core.*?\n(?=\n## |\Z)", agents, re.S)
+          assert m and m.group(0).strip() == asset, "AGENTS.md core differs from the asset"
+          readme = open("README.md").read()
+          m = re.search(r"<!-- core:begin -->\n```markdown\n(.*?)\n```\n<!-- core:end -->", readme, re.S)
+          assert m and m.group(1).strip() == asset, "README core differs from the asset"
+          print("core identical in AGENTS.md and README")
+          PY
+
       - name: Evaluation queries are well-formed (20 total, 10 positive, 12 train)
         run: |
           python3 - <<'PY'
