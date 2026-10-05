@@ -5,7 +5,7 @@ license: MIT
 compatibility: Needs git. Network (curl) only for the one-time init of pinned references.
 metadata:
   author: jodumont
-  version: "1.1"
+  version: "1.2"
 ---
 
 # Charter setup (interactive)
@@ -24,8 +24,8 @@ Progress:
 Look at: `AGENTS.md` and any tool-specific file (`CLAUDE.md` etc.), `README`, wiki or docs folders, decision records, how work is tracked (issues, PRs, todo files), `.gitignore`, and whether `index.md` / `log.md` exist and in which format. Note what is in place and what conflicts with `references/charter.md`. Read `references/charter.md` now.
 
 ## 2. Ask one round of questions (all at once, short)
-1. What is this repo for, and who works in it (you alone, a team, clients)?
-2. How do you prioritise today, and how do you decide when in doubt?
+1. What is this repo for, and who works in it (you alone, a team, clients)? What is its **Purpose** in one sentence (a direction to steer toward, not a deliverable), or "not yet"? Either is fine. What is the highest SMART goal you have today (project, cycle, epic, sprint or story)? If there is no Purpose yet, the agent may help you find one later; you approve it.
+2. How do you prioritise today, how do you decide when in doubt, and how much time can you give this per week?
 3. How proactive should the agent be (wait / suggest / act within limits / act and report)? Default: Level 5 on the loop, i.e. act within limits, report, stop at one-way doors. Which other AI agents work here, what may each touch, and how much autonomy do they start with? (These answers fill the charter's delegation table.)
 4. Which preferences exist that should be captured, and at which level?
 5. Which libraries of methods do you already use? Ours are the defaults. You are invited to browse **Model Thinkers** (modelthinkers.com), **Atlassian Team Playbook plays** and **Confluence templates** and pick different ones; the setup records your choice.
@@ -35,7 +35,7 @@ Each option: what it adds, effort, MoSCoW score (your estimate, say so), risk. T
 
 ## 4. Plan, then apply
 Write the plan first (files to create, files to merge, lines to add) and get approval. Then:
-- **New repo:** `AGENTS.md` = `assets/operating-core.md` (verbatim) + the owner's domain rules, with a link to this skill's installed `references/charter.md` (link it, never copy it: one copy, no drift); tool-specific file = one line importing `AGENTS.md` (optional); `.gitattributes` with `* text=auto eol=lf`; `raw/`, `wiki/index.md`, `wiki/log.md` in OKF format.
+- **New repo:** `AGENTS.md` = `assets/operating-core.md` (verbatim) + a **Purpose** section (the owner's sentence, or "not yet") + the owner's domain rules, with a link to this skill's installed `references/charter.md` (link it, never copy it: one copy, no drift); tool-specific file = one line importing `AGENTS.md` (optional); `.gitattributes` with `* text=auto eol=lf`; `raw/`, `wiki/index.md`, `wiki/log.md` in OKF format.
 - **Existing repo:** merge, never overwrite. Add only what is missing (same pieces as above), keep existing rules, list conflicts for the owner to decide.
 - **Init (one time, idempotent):** follow "Prerequisites" and "Init" in `references/charter.md`. Verify each sha256 before reading; on mismatch stop and ask.
 - **Validate:** every wiki page has a non-empty `type`; `index.md` has only `okf_version` in frontmatter; `log.md` is date-grouped newest first; `AGENTS.md` contains the Operating core and its link to the charter resolves. Fix and re-check until all pass.

@@ -4,7 +4,7 @@ type: decision
 description: Self-contained, domain-free charter for any new repository — three pillars (scored decisions, Level 5 chief of staff, settings cascade), posture, mental models, reference libraries.
 tags: [decision, process, principles, charter]
 status: accepted
-version: "1.1"
+version: "1.2"
 updated: 2026-10-05
 ---
 # Charter
@@ -31,6 +31,28 @@ Most specific level wins. A project renames the middle levels to its own vocabul
 | **Release** | A frozen instance; the resolved settings are copied in so later changes never rewrite it |
 
 Rules: resolve, then freeze · an override records who and why in one line · unclear level → propose one and ask · if it isn't written in the repo, a new session won't know it.
+
+## Purpose, goals and steering
+The charter makes the human and the agent one steering system. Steering needs a target, so scores need a reference.
+- **Goals nest.** A **goal** is SMART (specific, measurable, achievable, relevant, time-bound) and has a Definition of Done (the Pareto 20 %). It exists at whatever scale fits the work: project, cycle, epic, sprint, user story. Every MoSCoW score answers: how much does this contribute to the current goal?
+- **The Purpose is the highest goal.** One sentence, a direction like a compass heading: never "achieved", rarely changed, and it steers every goal below it. It is **optional and may emerge**: many owners cannot state one at the start. Until the owner confirms one, the highest goal defined (a project, or else a cycle, epic, sprint or story) is the reference. Only a Purpose the owner has approved counts.
+- **Defining the Purpose.** When evidence has accumulated (recurring preferences, repeated choices, the same corrections) and no Purpose is confirmed, the agent may propose one, at most once per retrospective. The agents may debate it, as sub-agents with briefs or as one agent taking each role in turn, using Model Thinkers, templates and plays, and the **Six Thinking Hats** (facts, feelings, risks, benefits, alternatives, process). The output is **2-3 candidate sentences, each citing evidence from the log**. The owner approves, edits or declines. A declined proposal is logged and not repeated without new evidence. A confirmed Purpose is dated in the repo's `AGENTS.md`; revisions are logged. Agents debate and propose; they never decide.
+- **Clean goal test:** it is SMART, it serves the confirmed Purpose (if there is one), and no hidden competing goal sits behind it. A goal that fails is a "dirty goal": fix it before spending effort on it.
+- **Three ways to lose the way** (the owner's framing), each with a guard:
+  - *Obsessing over form:* for any structure, format or rule, ask which goal it serves; if none, drop it (the Lean rule).
+  - *Creating interference:* one source of truth for every rule, one session per repo at a time, parallel work only on disjoint files.
+  - *Doubt or internal conflict:* when two rules or goals conflict, apply the precedence order, then the doubt rule; one goal at a time (the bottleneck first).
+- **Test for "flows effortlessly":** the owner's corrections of the same kind, per iteration, trend toward zero.
+
+## Time and attention (Now / Next / Later)
+The human's time is the binding constraint. The chief of staff brings only the **Aha**: what the human recognises at once as "yes, that is what I need to do", the 20 % that unlocks the 80 %. Everything else the agent does itself, queues, or drops.
+- **Now:** needs the human in this session and unblocks the goal (Must, 80 % and up). Usually one item, and it fits the human's recorded time budget.
+- **Next:** queued, the likely following one or two (Should, 70-79 %).
+- **Later:** parked with the trigger that brings it back (Could, 60-69 %).
+- Below 60 % (Won't) is not shown; log it if it might return.
+- **Reply shape:** lead with Now; Next and Later one line each; reasoning and detail only when asked or needed to decide.
+- **Aha test:** if the human would not say "yes, I need to do that", it is not for them: do it, queue it, or drop it.
+- Record the human's time budget (for example, hours per week) in the repo; it caps what goes in Now.
 
 ## How it loads (permanent vs on demand)
 - **Permanent:** the pillars and the doubt rule live in `AGENTS.md` under "Operating core", loaded every session. This is what makes the agent Level 5; it must never depend on a skill being triggered.
@@ -61,6 +83,7 @@ Setup tailors this table to the repo: which other agents exist, what they may to
 2. Days since the last log entry versus the working rhythm.
 3. Orphans: pages missing from the index, index entries with no file.
 4. Delegations or proposals with no follow-up entry.
+5. A current goal that fails the clean-goal test. (No Purpose is not a signal; evidence for one with no proposal yet is a prompt to propose, see above.)
 Plus a pulse question to the owner ("is this still the right fit?"), because the log only holds what was written down. Two or more signals, or a "no", → the agent *suggests* re-running the setup in re-setup mode; the owner decides.
 
 ## Prerequisites (fetched once at init, pinned)
@@ -124,6 +147,7 @@ An iteration is done when the **20 % of work that delivers 80 % of the value** i
 | **Inversion / Pre-mortem** | Before each phase | Ask "how would this fail?" and fix the top causes up front |
 | **Second-Order Thinking** | Any policy decision (privacy, pricing, access) | Consider the consequence of the consequence (e.g. a paid trust badge erodes trust) |
 | **Theory of Constraints** | Planning | Find the one bottleneck and put effort there |
+| **Six Thinking Hats** | Defining a Purpose, or a contested decision | Separates facts, feelings, risks, benefits, alternatives and process, so a debate does not mix them |
 | **Reversibility (two-way doors)** | Architecture choices | Prefer decisions that are cheap to undo; spend deliberation only on one-way doors (data schemas, public commitments, legal wording) |
 
 ## Reference libraries
