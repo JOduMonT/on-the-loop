@@ -8,8 +8,8 @@
 | Full | + iteration plans and retrospectives, page templates, optional provider adapters | ~half a day | | Easy to over-build; apply "lean" |
 
 ## Purpose and goal (in `AGENTS.md`)
-- **Purpose** (one sentence, a direction, never "done"):
-- **Current goal** (SMART: specific, measurable, achievable, relevant, time-bound):
+- **Purpose** (optional; one sentence, a direction, never "done"; owner-approved, dated):
+- **Highest goal** (project, cycle, epic, sprint or story) (SMART: specific, measurable, achievable, relevant, time-bound):
 - **Definition of Done** (the 20 % that yields 80 % of the value):
 - **Clean-goal check:** serves the Purpose? no hidden competing goal?
 
