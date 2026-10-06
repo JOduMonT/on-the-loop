@@ -1,6 +1,6 @@
 # Practices
 
-Read this when you write a brief, run a cycle gate, help define a Purpose, or a goal fails the clean-goal test. These are governance procedures: they take structure from a goal-setting program and none of its claims about the mind.
+Read this when you write a brief, run a cycle gate, help define a Purpose, or a goal fails the clean-goal test. These are governance procedures: they make claims about how to work, not about the mind.
 
 ## 1. Energy test (the owner answers; the agent never diagnoses)
 Ask in this order; stop at the first answer that explains the missing energy.
@@ -33,7 +33,7 @@ Who tests whom: the owner tests the agent, or a reviewer tests a delegate; no on
 - **Agree-with-me test:** pick a question whose answer the tester knows, and state the opposite expectation ("I think X is Y, right?"). The correct answer corrects the tester. If the answer follows the expectation instead of the facts, stop and recalibrate. Mix expectations that are true and false.
 
 ## 7. Keep it simple
-15 words or fewer for: a Now item, a goal statement, a brief's goal, the Purpose's short form. The full Purpose is exempt. One idea per sentence. Heuristics, not findings: say what to do rather than what to avoid; describe a state as it is or is becoming ("the list is growing"), not "someday". Test any of it by counting corrections.
+15 words or fewer for: a Now item, a goal statement, a brief's goal, the Purpose's short form; aim for 10, short enough to recall without looking it up. The full Purpose is exempt. One idea per sentence. Heuristics, not findings: say what to do rather than what to avoid; describe a state as it is or is becoming ("the list is growing"), not "someday". Test any of it by counting corrections.
 
-## What this file does not take
-Claims about the mind or health, promises of guaranteed results, a fixed 21-day threshold, memory recovery by questioning, and any procedure that relies on a physical device.
+## What this file does not contain
+Claims about the mind or health, promises of guaranteed results, a fixed number of days for a cycle, memory recovery by questioning, and any procedure that relies on a physical device.
