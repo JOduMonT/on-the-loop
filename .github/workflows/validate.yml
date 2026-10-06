@@ -70,6 +70,19 @@ jobs:
           print("core identical in AGENTS.md and README")
           PY
 
+      - name: Links are markdown, not wikilinks (Obsidian settings shipped and no [[...]] in the docs)
+        run: |
+          python3 - <<'PY'
+          import json, re, pathlib
+          cfg = json.load(open(".obsidian/app.json"))
+          assert cfg.get("useMarkdownLinks") is True and cfg.get("newLinkFormat") == "relative", "obsidian link settings"
+          bad = [str(p) for d in ("skills", "evals", ".") for p in (pathlib.Path(d).rglob("*.md") if d != "." else pathlib.Path(".").glob("*.md"))
+                 if re.search(r"\[\[[^\]]+\]\]", re.sub(r"`[^`
+]*`", "", re.sub(r"```.*?```", "", p.read_text(encoding="utf-8"), flags=re.S)))]
+          assert not bad, "wikilinks found in: " + ", ".join(sorted(set(bad)))
+          print("markdown links only")
+          PY
+
       - name: Evaluation queries are well-formed (20 total, 10 positive, 12 train)
         run: |
           python3 - <<'PY'

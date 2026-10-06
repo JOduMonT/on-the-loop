@@ -1,0 +1,3 @@
+# Obsidian is per machine; only the link settings are shared (markdown links, no wikilinks)
+.obsidian/*
+!.obsidian/app.json
