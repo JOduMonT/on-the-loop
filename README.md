@@ -75,6 +75,12 @@ Copy `skills/charter/` (a real folder, no symlinks) to where your agent looks fo
 
 Then tell your agent: **"apply the charter"**. Works on a new or an existing repository (it merges, never overwrites).
 
+## Works with
+The charter is plain text, so the endpoint behind your agent (a hosted router, a gateway such as LiteLLM, a local Ollama) does not matter to it; the tool you run must load `AGENTS.md`.
+- **Tested with:** Claude Code on Anthropic models (trigger eval: 20 queries, 18 correct, the author's own estimate; setup, remove, reset and legacy-remove run on scratch repos).
+- **Designed for:** any tool that reads `AGENTS.md` and any model reached through an Anthropic-compatible or OpenAI-compatible API. Not yet tested there.
+- **Known limits:** skill folders are found in different places by different tools (see below); a small model may follow the 6-line Operating core but handle the longer charter and the skill modes less reliably. Reports and test results are welcome.
+
 ## Repository layout
 ```
 skills/charter/
