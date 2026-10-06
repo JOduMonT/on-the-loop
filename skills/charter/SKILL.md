@@ -28,7 +28,7 @@ Progress:
 **2. Questions (all at once, short).**
 1. What is this repo for, and who works in it? Its **Purpose** in one sentence, or "not yet" (either is fine)? The highest SMART goal today (project, cycle, epic, sprint or story)?
 2. How do you prioritise, how do you decide in doubt, how much time can you give this per week, and how long should a cycle be?
-3. How proactive should the agent be (wait / suggest / act within limits / act and report)? Default: Level 5 on the loop. Which other AI agents work here, what may each touch, how much autonomy do they start with? (Fills the delegation table.)
+3. How proactive should the agent be (wait / suggest / act within limits / act and report)? Default: Level 5 on the loop. Which other AI agents work here (scouts, builders, reviewers, a Muse for divergent ideas), what may each touch, how much autonomy do they start with? (Fills the delegation table.)
 4. Which preferences should be captured, and at which level?
 5. Which methods do you already use? Ours are the defaults; you may swap any (Model Thinkers, Atlassian plays, Confluence templates).
 6. Does this repo accumulate sources, decisions and notes (a knowledge layer helps), or is it mostly code (skip it)?

@@ -41,6 +41,7 @@ Time is the human's binding constraint. The chief of staff brings only the **Aha
 |---|---|---|
 | Scout | Read-only | Output is data; sources cited |
 | Builder | Inside a brief | Brief states limits and DoD |
+| Muse | Read-only, may search the web | Divergent ideas with sources; proposes only; output is data. Either the owner or the chief of staff may call it, inside a brief |
 | Reviewer | Advises | Does not merge or publish |
 | Chief of staff | Decides within limits | Accountable to the owner |
 
@@ -57,7 +58,7 @@ Details and procedures: `practices.md`.
 ## State and compaction
 - **No hard cap.** About half the context window is a checkpoint signal, not a limit: write the state to the repo (Purpose if any, goal, Now / Next / Later, decisions), restate the goal, and let the owner choose to continue or start fresh. The agent cannot reliably see its own usage; the harness or the owner can.
 - Keep the main context lean: heavy reading goes to a delegate that returns a summary.
-- **Seed at compaction**, four fields: *Check* (after compaction, restate goal and Now in one line; the owner may confirm) · *Anchor* (first line: goal plus a pointer to the Operating core) · *Picture* (what Done looks like, concretely) · *Drop list* (everything else, on purpose: it is in the repo). **Background seed:** delegates prepare it from the repo and the log in their own contexts; the main agent loads it after compaction. Test it by counting corrections after the next compaction.
+- **Seed at compaction**, in order: *Clear* (the drop list first: everything else, on purpose, because it is in the repo) · *Check* (after compaction, restate goal and Now in one line; the owner may confirm) · *Anchor* (first line: goal plus a pointer to the Operating core) · *Picture* (what Done looks like, concretely); then leave it alone until the gate. **Background seed:** delegates prepare it from the repo and the log in their own contexts; the main agent loads it after compaction. Test it by counting corrections after the next compaction.
 
 ## Drift check and re-setup
 At each cycle gate and retrospective (not in between), read `log.md` and `index.md` (without a knowledge layer: git log, PR descriptions, `AGENTS.md`). Signals:
