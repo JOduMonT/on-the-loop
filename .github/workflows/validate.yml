@@ -4,6 +4,7 @@ on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -42,6 +43,12 @@ jobs:
           n=$(wc -l < skills/charter/SKILL.md)
           echo "SKILL.md: $n lines"
           [ "$n" -lt 500 ]
+
+      - name: No mind-technique vocabulary or claims in the skill
+        run: |
+          if grep -rniE "hypno|trance|unconscious|subconscious|affirm|convincer" skills; then
+            echo "Forbidden vocabulary found in skills/ (see above)"; exit 1
+          fi
 
       - name: Charter stays at or under 120 lines
         run: |

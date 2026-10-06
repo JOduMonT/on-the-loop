@@ -5,12 +5,12 @@ license: MIT
 compatibility: Needs git. Network (curl) only for the one-time init of pinned references.
 metadata:
   author: jodumont
-  version: "1.3"
+  version: "1.4"
 ---
 
 # Charter (interactive)
 
-The behaviour is **permanent** and lives in the repo's `AGENTS.md` ("Operating core"), loaded every session. This skill is the on-demand procedure around it. A new repo can skip the skill and paste the Operating core (see the README); use the skill for a repo that already works, or for any mode below. Read `references/charter.md` first. Ask which mode if unclear.
+The behaviour is **permanent** and lives in the repo's `AGENTS.md` ("Operating core"), loaded every session. This skill is the on-demand procedure around it. A new repo can skip the skill and paste the Operating core (see the README); use the skill for a repo that already works, or for any mode below. Read `references/charter.md` first; read `references/practices.md` when you write a brief, run a cycle gate, help define a Purpose, or a goal fails the clean-goal test. Ask which mode if unclear.
 
 **Modes:** *setup* (new or existing repo) · *re-setup* (after drift) · *reset* (back to defaults) · *remove* (uninstall). Reset and remove are one-way doors: plan, show, wait for the owner's go.
 
@@ -27,8 +27,8 @@ Progress:
 
 **2. Questions (all at once, short).**
 1. What is this repo for, and who works in it? Its **Purpose** in one sentence, or "not yet" (either is fine)? The highest SMART goal today (project, cycle, epic, sprint or story)?
-2. How do you prioritise, how do you decide in doubt, and how much time can you give this per week?
-3. How proactive should the agent be (wait / suggest / act within limits / act and report)? Default: Level 5 on the loop. Which other AI agents work here, what may each touch, how much autonomy do they start with? (Fills the delegation table.)
+2. How do you prioritise, how do you decide in doubt, how much time can you give this per week, and how long should a cycle be?
+3. How proactive should the agent be (wait / suggest / act within limits / act and report)? Default: Level 5 on the loop. Which other AI agents work here (scouts, builders, reviewers, a Muse for divergent ideas), what may each touch, how much autonomy do they start with? (Fills the delegation table.)
 4. Which preferences should be captured, and at which level?
 5. Which methods do you already use? Ours are the defaults; you may swap any (Model Thinkers, Atlassian plays, Confluence templates).
 6. Does this repo accumulate sources, decisions and notes (a knowledge layer helps), or is it mostly code (skip it)?
