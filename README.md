@@ -38,7 +38,7 @@ Common ways to think about the layers of an agent system, and what this charter 
 | Prompt: role, constraints, definition of done, output shape | Yes. The Operating core states them once, permanently, in `AGENTS.md`. |
 | Context: what the model sees, in what order | Partly. Always-on core, on-demand skill, a checkpoint signal and a seed template at compaction (no hard cap), heavy reading delegated. |
 | Harness: tools, permissions, retries, traces | No. That belongs to your agent tool; the charter stays provider-agnostic. |
-| Loop: run, check, correct, repeat | Yes, at human pace. Plan, implement, validate; retrospective; drift check; a maximum number of attempts per delegation. |
+| Loop: run, check, correct, repeat | Yes, at human pace. Plan, implement, validate; one goal per cycle with a gate; retrospective; drift check; signal checks; a maximum number of attempts per delegation. |
 | Graph: who runs in parallel, who waits, where the human sits | Lightly. Roles (scout, builder, reviewer), the human on the loop, one-way doors. |
 
 What the charter adds on top: scored decisions (MoSCoW, Pareto), a settings cascade so preferences persist, earned autonomy, and a re-setup process.
@@ -81,6 +81,7 @@ skills/charter/
   SKILL.md                  # setup, re-setup, reset, remove (loaded on demand)
   references/charter.md     # the charter (canonical text, under 120 lines)
   references/setup.md       # knowledge layer, pinned references, init, install record
+  references/practices.md   # energy test, objections, cycles and gates, signal check, keep it simple
   assets/operating-core.md  # the always-on block written into AGENTS.md
   assets/templates.md       # setup options, install record, delegation brief, log entries
 evals/trigger-queries.json  # 20 labelled prompts to test when the skill triggers

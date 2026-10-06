@@ -34,7 +34,7 @@ curl.exe -fsSL "<raw url>" -o .cache/refs/<file>; (Get-FileHash -Algorithm SHA25
 ## The install record (what makes remove exact)
 The setup wraps what it adds to `AGENTS.md` in markers and lists the files it created in the begin marker. `AGENTS.md` always exists, so the record works with or without a wiki:
 ```
-<!-- charter:begin v1.3 | created: .claude/skills/charter wiki/index.md wiki/log.md .gitattributes -->
+<!-- charter:begin v1.4 | created: .claude/skills/charter wiki/index.md wiki/log.md .gitattributes -->
 ## Operating core (permanent ...)
 ... the six lines, verbatim from assets/operating-core.md ...
 Full text: [charter](path/to/references/charter.md).
