@@ -2,7 +2,9 @@
 
 A self-contained, provider-agnostic **charter** for working with an AI agent, packaged as an [Agent Skill](https://agentskills.io).
 
-The human sets the limits; the agent acts inside them, reports, and stops at one-way doors: the human is **on the loop**.
+The human sets the limits; the agent acts inside them, reports, and stops at one-way doors: the human is **on the loop** (HOTL, human-on-the-loop), not in it for every step.
+
+Plain text that any agent reading `AGENTS.md` follows, plus an on-demand skill to install, tune and remove it, and an optional local recall layer so the agent remembers past decisions and fixes.
 
 ## Install in 30 seconds
 Paste this block into your repo's `AGENTS.md` (or create it). Any agent that reads `AGENTS.md` follows it from the next session. This is the whole behaviour.
@@ -21,7 +23,7 @@ Paste this block into your repo's `AGENTS.md` (or create it). Any agent that rea
 Costs nothing to undo: delete the block. Full text and the reasoning: [`charter.md`](skills/charter/references/charter.md) (kept under 120 lines).
 
 ## Already have a working repo? Use the skill
-The `charter` skill evaluates your repo, asks one round of questions, proposes 2-3 scored setups and applies the one you pick, merging into what exists and never overwriting. It also offers an optional knowledge layer (the [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) pattern, then the [Open Knowledge Format](https://github.com/GoogleCloudPlatform/open-knowledge-format) v0.2; both pinned by hash, only if relevant to your repo), and four modes:
+The `charter` skill evaluates your repo, asks one round of questions, proposes 2-3 scored setups and applies the one you pick, merging into what exists and never overwriting. It also offers the optional knowledge and recall layers described below, and four modes:
 **setup** · **re-setup** (when the fit drifts) · **reset** (back to defaults, keeping your Purpose, log and rules) · **remove** (uninstall, exactly what setup added).
 
 ## What it gives you
@@ -29,6 +31,17 @@ The `charter` skill evaluates your repo, asks one round of questions, proposes 2
 2. **A Level 5 chief of staff.** The agent anticipates, chooses a mental model, does the work within your limits, delegates with a brief, earns autonomy, and brings the next decision already scored.
 3. **Every preference recorded at the right level** (a settings cascade: invariant → system → account → group → item → release).
 4. **Drift check and re-setup.** At each retrospective the agent reads `index.md` and `log.md`, and suggests re-running the setup when the fit degrades. You decide.
+5. **Optional memory that stays local.** A recall layer the agent searches before it changes something, and feeds after each task (see below).
+
+## Optional knowledge and recall layers
+Both are offered by the skill, only when they fit; the charter works without them.
+- **Knowledge layer:** the [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) pattern (raw sources compiled into linked pages, with `index.md` and `log.md`), shaped by the [Open Knowledge Format](https://github.com/GoogleCloudPlatform/open-knowledge-format) v0.2 so any tool can read it. Links are relative markdown links; both references are pinned by sha256.
+- **Recall layer** (add it only once plain text search starts missing): two Python files you copy into `.agents/`, one git-ignored SQLite file, no server, no Docker, no account.
+  - `memory.py` cuts Markdown pages into heading-sized chunks, embeds them locally ([fastembed](https://github.com/qdrant/fastembed) + [sqlite-vec](https://github.com/asg017/sqlite-vec)), and answers with hybrid search (75 % vectors, 25 % keywords) weighted by recency decay (half-life 90 days by default).
+  - `ingest_session.py` turns new commits, a diff, a note or a session log into a dated atom note (summary, decisions, commands and fixes that worked), versioned in git and indexed in the same database.
+  - Any model can do the optional atomizing pass (set `MEMORY_ATOMIZE_CMD` to a command that reads stdin and prints the reply); without one, a pattern pass does the work offline.
+  - Safety: secrets are redacted before anything is stored, raw session logs and tool output are never indexed, and the index is a cache you can delete and rebuild.
+  - Suggested protocol for `AGENTS.md` (owner approves): search before a task that changes code or configuration and on any error; ingest after the task. Details and measured results: [`setup.md`](skills/charter/references/setup.md).
 
 ## Where it fits
 Common ways to think about the layers of an agent system, and what this charter covers (it is about governance, not about building the machinery):
@@ -77,9 +90,10 @@ Then tell your agent: **"apply the charter"**. Works on a new or an existing rep
 
 ## Works with
 The charter is plain text, so the endpoint behind your agent (a hosted router, a gateway such as LiteLLM, a local Ollama) does not matter to it; the tool you run must load `AGENTS.md`.
+- **Recall layer:** Python 3.11 or newer on Windows, macOS or Linux (`pip install sqlite-vec fastembed`); the embedding model runs on the CPU.
 - **Tested with:** Claude Code on Anthropic models (trigger eval: 20 queries, 18 correct, the author's own estimate; setup, remove, reset and legacy-remove run on scratch repos).
 - **Designed for:** any tool that reads `AGENTS.md` and any model reached through an Anthropic-compatible or OpenAI-compatible API. Not yet tested there.
-- **Known limits:** skill folders are found in different places by different tools (see below); a small model may follow the 6-line Operating core but handle the longer charter and the skill modes less reliably. Reports and test results are welcome.
+- **Known limits:** skill folders are found in different places by different tools (see [Install the skill](#install-the-skill)); a small model may follow the 6-line Operating core but handle the longer charter and the skill modes less reliably. Reports and test results are welcome.
 
 ## Repository layout
 ```
