@@ -89,6 +89,8 @@ skills/charter/
   references/setup.md       # knowledge layer, pinned references, init, install record
   references/practices.md   # energy test, objections, cycles and gates, signal check, keep it simple
   assets/operating-core.md  # the always-on block written into AGENTS.md
+  assets/memory.py          # optional recall layer: local vector + keyword search with recency decay, one SQLite file
+  assets/ingest_session.py  # optional: commits, diffs, notes or session logs -> dated atom notes + index
   assets/templates.md       # setup options, install record, delegation brief, log entries
 evals/trigger-queries.json  # 20 labelled prompts to test when the skill triggers
 ```

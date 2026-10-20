@@ -38,7 +38,7 @@ Progress:
 **4. Apply.** Show the plan first (files to create, files to merge, lines to add).
 - Wrap the installed block in the markers from `references/setup.md` and list the files you created. Operating core verbatim from `assets/operating-core.md`; the owner's Purpose section (or "not yet") and domain rules stay outside the markers; link `references/charter.md`, never copy it.
 - **Existing repo:** merge, never overwrite; add only what is missing; keep existing rules; list conflicts for the owner.
-- **Knowledge layer, only if question 6 says yes:** read `references/setup.md`; install the LLM Wiki structure first, then the OKF files; run init and verify each sha256 (mismatch: stop and ask).
+- **Knowledge layer, only if question 6 says yes:** read `references/setup.md`; install the LLM Wiki structure first, then the OKF files; run init and verify each sha256 (mismatch: stop and ask). Offer the recall layer (`assets/memory.py`) only when plain search already misses.
 - `.gitattributes` with `* text=auto eol=lf`; an optional one-line tool-specific file importing `AGENTS.md`.
 
 **5. Validate.** `AGENTS.md` contains the Operating core and its link resolves; with a knowledge layer: every wiki page has a `type`, `index.md` has only `okf_version`, `log.md` is date-grouped newest first. Fix and re-check.
