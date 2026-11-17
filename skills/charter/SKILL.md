@@ -10,7 +10,7 @@ metadata:
 
 # Charter (interactive)
 
-The behaviour is **permanent** and lives in the repo's `AGENTS.md` ("Operating core"), loaded every session. This skill is the on-demand procedure around it. A new repo can skip the skill and paste the Operating core (see the README); use the skill for a repo that already works, or for any mode below. Read `references/charter.md` first; read `references/practices.md` when you write a brief, run a cycle gate, help define a Purpose, or a goal fails the clean-goal test. Ask which mode if unclear.
+The behaviour is **permanent** and lives in the repo's `AGENTS.md` ("Operating core"), loaded every session. This skill is the on-demand procedure around it. A new repo can skip the skill and paste the Operating core (see the README); use the skill for a repo that already works, or for any mode below. Read `references/charter.md` first; read `references/practices.md` when you write a brief, run a cycle gate, help define a Purpose, or a goal fails the clean-goal test. Read `references/components.md` only when the owner wants roles, gates or rules as composable files, or wants agent work measured in tokens per result. Ask which mode if unclear.
 
 **Modes:** *setup* (new or existing repo) · *re-setup* (after drift) · *reset* (back to defaults) · *remove* (uninstall). Reset and remove are one-way doors: plan, show, wait for the owner's go.
 
